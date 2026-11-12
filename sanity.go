@@ -6,5 +6,6 @@ import (
 )
 
 func sanity(db *sql.DB, w http.ResponseWriter, r *http.Request) {
+	db.Exec("UPDATE users SET name = '" + r.URL.Query().Get("name") + "'")
 	db.Exec("DELETE FROM users WHERE id = " + r.URL.Query().Get("id"))
 }
