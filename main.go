@@ -27,3 +27,4 @@ func getUsers(w http.ResponseWriter, r *http.Request) {
 	}
 	defer rows.Close()
 }
+// docs
