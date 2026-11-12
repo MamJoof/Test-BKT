@@ -27,3 +27,10 @@ func getUsers(w http.ResponseWriter, r *http.Request) {
 	}
 	defer rows.Close()
 }
+
+func getOrders(w http.ResponseWriter, r *http.Request) {
+	_, err := db.Query("SELECT id FROM orders")
+	if err != nil {
+		http.Error(w, err.Error(), 500)
+	}
+}
